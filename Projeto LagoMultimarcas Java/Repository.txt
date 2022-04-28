@@ -1,0 +1,9 @@
+package com.SistemaMultimarcas.LagoMultimarcas.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.SistemaMultimarcas.LagoMultimarcas.model.Titulo;
+
+public interface Titulos extends JpaRepository<Titulo, Long> {
+
+}

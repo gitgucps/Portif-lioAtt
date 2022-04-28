@@ -1,0 +1,25 @@
+use lagomultimarcas;
+
+codigo smallint (4) primary key,
+celular integer (25),
+cep integer (20),
+cidade varchar (150),
+cpf integer (30),
+data_negociacao varchar (30),
+descricao varchar (250),
+email varchar (250),
+endereco varchar (250),
+nome_completo varchar (250),
+nome_mae varchar (250),
+placa varchar (20),
+renavam varchar (40),
+rg integer (25),
+status enum ('PENDENTE', 'COMPRA', 'VENDA'),
+telefone_fixo integer (30),
+veiculo1 varchar (200),
+veiculo2 varchar (200),
+veiculo3 varchar (200));
+
+
+
+spring.datasource.url=jdbc:mysql://localhost:3306/lagomultimarcas?useTimezone=true&serverTimezone=UTC

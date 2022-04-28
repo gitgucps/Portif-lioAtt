@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Cadastro de Clientes</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+    <form class="form-horizontal" method="POST" action="/titulos/novo">
+    	<div class="alert alert-sucess" th:if="${#strings.isEmpty(mensagem)}">
+    		<span th:text="${mensagem}">Cadastro Salvo com Sucesso!</span>
+    	</div>
+    	<div class="panel panel-default">
+    		<div class="panel-heading">
+    			<h3 class="panel-title">Novo Cadastro de Cliente:</h3>
+    		</div>
+    		<br>
+    		<div class="panel-body">
+				<div class="form-group">
+					<div for="nome_completo" class="col-sm-2 control-label"> Nome Completo:</label>
+					<input type="text" class="form-control" id="nome_completo"/>
+				</div>
+			</div>
+		<div class="form-group">
+				<div for="cpf" class="col-sm-2 control-label"> CPF:</label>
+					<input type="text" class="form-control" id="cpf"/>	
+			</div>
+		</div>
+		<div class="form-group">
+				<div for="rg" class="col-sm-2 control-label"> RG:</label>
+					<input type="text" class="form-control" id="rg"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="endereco" class="col-sm-2 control-label"> Endereço:</label>
+					<input type="text" class="form-control" id="endereco"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="cep" class="col-sm-2 control-label"> CEP:</label>
+					<input type="text" class="form-control" id="cep"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="cidade" class="col-sm-2 control-label"> Cidade:</label>
+					<input type="text" class="form-control" id="cidade"/>	
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="nome_mae" class="col-sm-2 control-label"> Nome da Mãe:</label>
+					<input type="text" class="form-control" id="nome_mae"/>	
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="celular" class="col-sm-2 control-label"> Celular:</label>
+					<input type="text" class="form-control" id="celular"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="telefone_fixo" class="col-sm-2 control-label"> Telefone Fixo:</label>
+					<input type="text" class="form-control" id="telefone_fixo"/>
+		</div>
+			</div>
+		<div class="form-group">
+			<div for="email" class="col-sm-2 control-label"> Email:</label>
+				<input type="text" class="form-control" id="email"/>	
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="veiculo1" class="col-sm-2 control-label"> Veiculo 1:</label>
+					<input type="text" class="form-control" id="veiculo1"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="veiculo2" class="col-sm-2 control-label"> Veiculo 2:</label>
+					<input type="text" class="form-control" id="veiculo2"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="veiculo3" class="col-sm-2 control-label"> Veiculo 3:</label>
+					<input type="text" class="form-control" id="veiculo3"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="placa" class="col-sm-2 control-label"> Placa:</label>
+					<input type="text" class="form-control" id="placa"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="renavam" class="col-sm-2 control-label"> Renavam:</label>
+					<input type="text" class="form-control" id="renavam"/>
+		</div>
+			</div>
+		<div class="form-group">
+				<div for="data_negociacao" class="col-sm-2 control-label"> Data de Negociação:</label>
+					<input type="text" class="form-control" id="data_negociacao"/>
+		</div>
+			</div>
+				<div class="form-group">
+					<label for="status" class="col-sm-2 control-label">Status</label>
+					<div class="col-sm-2">
+						<select class="form-control" name="status">
+							<option value="PENDENTE">Pendente</option>
+							<option value="PENDENTE">Compra</option>
+							<option value="PENDENTE">Venda</option>
+							<option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}"></option>
+                    	</select>
+                    </div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Salvar</button>
+					</div>
+				</div>
+			</div>
+    	</div>
+    </form>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

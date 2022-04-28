@@ -1,0 +1,266 @@
+package com.SistemaMultimarcas.LagoMultimarcas.model;
+
+import java.util.Date;
+import java.util.Objects;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+@Entity
+public class Titulo {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY )
+	private int codigo;
+	
+	@Column(name = "celular", length = 25)
+	private int celular;
+	
+	@Column(name = "cep", length = 20)
+	private int cep;
+	
+	@Column(name = "cidade", length = 150)
+	private String cidade;
+	
+	@Column(name = "cpf", length = 30)
+	private int cpf;
+	
+	@Column(name = "data_negociacao", length = 30)
+	private String dataNegociacao;
+	
+	@Column(name = "descricao", length = 250)
+	private String descricao;
+	
+	@Column(name = "email", length = 250)
+	private String email;
+	
+	@Column(name = "endereco", length = 250)
+	private String endereco;
+	
+	@Column(name = "nome_completo", length = 250)
+	private String nomeCompleto;
+	
+	@Column(name = "nome_mae", length = 250)
+	private String nomeMae;
+	
+	@Column(name = "placa", length = 20)
+	private String placa;
+	
+	@Column(name = "renavam", length = 40)
+	private String renavam;
+	
+	@Column(name = "rg", length = 25)
+	private int rg;
+	
+	@Enumerated(EnumType.STRING)
+	private StatusTitulo status;
+	
+	@Column(name = "telefone_fixo", length = 30)
+	private int telefoneFixo;
+	
+	@Column(name = "veiculo1", length = 200)
+	private String veiculo1;
+	
+	@Column(name = "veiculo2", length = 200)
+	private String veiculo2;
+	
+	@Column(name = "veiculo3", length = 200)
+	private String veiculo3;
+
+	
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public int getCelular() {
+		return celular;
+	}
+
+	public void setCelular(int celular) {
+		this.celular = celular;
+	}
+
+	public int getCep() {
+		return cep;
+	}
+
+	public void setCep(int cep) {
+		this.cep = cep;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public int getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(int cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getDataNegociacao() {
+		return dataNegociacao;
+	}
+
+	public void setDataNegociacao(String dataNegociacao) {
+		this.dataNegociacao = dataNegociacao;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+
+	public String getNomeMae() {
+		return nomeMae;
+	}
+
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
+	}
+
+	public String getPlaca() {
+		return placa;
+	}
+
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
+
+	public String getRenavam() {
+		return renavam;
+	}
+
+	public void setRenavam(String renavam) {
+		this.renavam = renavam;
+	}
+
+	public int getRg() {
+		return rg;
+	}
+
+	public void setRg(int rg) {
+		this.rg = rg;
+	}
+
+	public StatusTitulo getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusTitulo status) {
+		this.status = status;
+	}
+
+	public int getTelefoneFixo() {
+		return telefoneFixo;
+	}
+
+	public void setTelefoneFixo(int telefoneFixo) {
+		this.telefoneFixo = telefoneFixo;
+	}
+
+	public String getVeiculo1() {
+		return veiculo1;
+	}
+
+	public void setVeiculo1(String veiculo1) {
+		this.veiculo1 = veiculo1;
+	}
+
+	public String getVeiculo2() {
+		return veiculo2;
+	}
+
+	public void setVeiculo2(String veiculo2) {
+		this.veiculo2 = veiculo2;
+	}
+
+	public String getVeiculo3() {
+		return veiculo3;
+	}
+
+	public void setVeiculo3(String veiculo3) {
+		this.veiculo3 = veiculo3;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(celular, cep, cidade, codigo, cpf, dataNegociacao, descricao, email, endereco, nomeCompleto,
+				nomeMae, placa, renavam, rg, status, telefoneFixo, veiculo1, veiculo2, veiculo3);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Titulo other = (Titulo) obj;
+		return celular == other.celular && cep == other.cep && Objects.equals(cidade, other.cidade)
+				&& codigo == other.codigo && cpf == other.cpf && Objects.equals(dataNegociacao, other.dataNegociacao)
+				&& Objects.equals(descricao, other.descricao) && Objects.equals(email, other.email)
+				&& Objects.equals(endereco, other.endereco) && Objects.equals(nomeCompleto, other.nomeCompleto)
+				&& Objects.equals(nomeMae, other.nomeMae) && Objects.equals(placa, other.placa)
+				&& Objects.equals(renavam, other.renavam) && rg == other.rg && status == other.status
+				&& telefoneFixo == other.telefoneFixo && Objects.equals(veiculo1, other.veiculo1)
+				&& Objects.equals(veiculo2, other.veiculo2) && Objects.equals(veiculo3, other.veiculo3);
+	}
+
+	@Override
+	public String toString() {
+		return "Titulo [codigo=" + codigo + ", celular=" + celular + ", cep=" + cep + ", cidade=" + cidade + ", cpf="
+				+ cpf + ", dataNegociacao=" + dataNegociacao + ", descricao=" + descricao + ", email=" + email
+				+ ", endereco=" + endereco + ", nomeCompleto=" + nomeCompleto + ", nomeMae=" + nomeMae + ", placa="
+				+ placa + ", renavam=" + renavam + ", rg=" + rg + ", status=" + status + ", telefoneFixo="
+				+ telefoneFixo + ", veiculo1=" + veiculo1 + ", veiculo2=" + veiculo2 + ", veiculo3=" + veiculo3 + "]";
+	}
+}
